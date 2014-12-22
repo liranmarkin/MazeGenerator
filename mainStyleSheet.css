@@ -1,0 +1,46 @@
+body{
+	text-align: center;
+}
+.normalFont{
+	font-size: 20px;
+	font-family: fantasy;
+	font-style: oblique;
+}
+.pic{
+	width: 50px;
+	height: 50px;	
+}
+.container{
+	background-color: rgb(250,230,200);
+	border-width: 2px;
+	border-color: rgb(0,0,0);
+	border-style: solid;
+	margin: auto;
+	width: 700px;
+	padding: 10px;
+	border-radius: 25px;
+}
+.tabletd{
+	border-width: 2px;
+	border-color: rgb(0,0,0);
+	border-style: solid;
+	border-radius: 5px;
+}
+.tds{
+	background-color: rgb(250,210,180);	
+	width: 50px;
+	margin:3px;
+	height: 50px;
+	text-align: center;
+	float: left;
+	display:table-cell;
+	border-radius: 5px;
+}
+.refresh{
+	background-color: #FF0000;
+	border-radius: 5px;
+	margin:10;
+	text-align: center;
+	font-size: 40px;
+	font-family: fantasy;
+}
