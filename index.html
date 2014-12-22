@@ -1,0 +1,20 @@
+<html ng-app="generator">
+	<head>
+		<title>gigigig</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.28/angular.min.js"></script>
+		
+	</head>
+	<body>
+		<div ng-controller="mazeController as maze">
+			{{5+5}}
+			<canvas id="canvas" width="{{15*maze.n}}" height="{{15*maze.n}}">
+				
+			</canvas>
+			
+			<button ng-click="maze.initMaze()">GoGoGo!!!</button>
+		</div>
+		<script src="generator.js"></script>
+	</body>
+		
+
+</html>
