@@ -72,6 +72,7 @@ app.controller('mazeController',function(){
 	
 	this.draw=function(){
 		var n = this.n;
+		content.strokeStyle = '#000000';
 		content.clearRect(0,0,199,199);
 		content.strokeRect(0,0,n*15-1,n*15-1);
 		for(var i = 0;i<n;i++){
@@ -94,22 +95,15 @@ app.controller('mazeController',function(){
 		content.fillStyle = '#ff0000';
 		content.fillRect(5,5,10,10);
 		content.fillRect((n-1)*15+5,(n-1)*15+5,n*15-5,n*15-5);
-		
-		/*
-		 * show solution
-		 *
-		for(var i = this.path.length-1;i>=0;i--){
+
+		for(var i = 1;i < this.path.length -1;i++){
+			content.beginPath();
+			content.strokeStyle = '#ff0000';
 			var point = this.path[i];
-			if(i == this.path.length-1){
-				content.beginPath(point%n*15+7,point/n*15+7);
-			}
-			else if(i == 0){
-				content.closePath(point%n*15+7,point/n*15+7);
-			}
-			else{
-				content.lineTo(point%n*15+7,point/n*15+7);
-			}
+			var pointb = this.path[i-1];
+			content.moveTo(pointb%n*15+7,Math.floor(pointb/n)*15+7);
+			content.lineTo(point%n*15+7,Math.floor(point/n)*15+7);
+			content.stroke();
 		}
-		*/
 	};
 });
