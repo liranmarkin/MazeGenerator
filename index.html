@@ -6,12 +6,12 @@
 	</head>
 	<body><center>
 		<div class="container" ng-controller="mazeController as maze">
-			Enter maze size: <input name="size" type="number" ng-model="maze.n"/> (1-40)
+			Enter maze size: <input name="size" type="number" ng-model="maze.n"/> (1-50)
 			<div class="refresh" ng-click="maze.initMaze()"> Generate maze... </div>
 			<canvas id="canvas" width="{{15*maze.n}}" height="{{15*maze.n}}" ng-show="maze.showMaze">
 				
 			</canvas>
-			
+			<div class="refresh" ng-click="maze.draw(true)" ng-show="maze.showMaze"> show solution </div>
 			
 		</div>
 		created by: liran markin & noam golani 

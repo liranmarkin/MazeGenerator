@@ -16,6 +16,8 @@ app.controller('mazeController',function(){
 	
 	this.initMaze = function(){
 		var n = this.n;
+		if(n > 50){	return;}
+		if(n == 42.32){alert("Cheat");}
 		this.graph = [];
 		this.walls = [];
 		this.visited = [];
@@ -45,7 +47,7 @@ app.controller('mazeController',function(){
 		this.solution[n*n-1] = 1;
 		this.path.push(n*n-1);
 		this.generateMaze(0,0); // 0 is startCell
-		this.draw();
+		this.draw(false);
 		this.showMaze = true;
 	};
 	
@@ -70,8 +72,9 @@ app.controller('mazeController',function(){
 		}	
 	};
 	
-	this.draw=function(){
+	this.draw=function(solve){
 		var n = this.n;
+		content.strokeStyle = '#000000';
 		content.clearRect(0,0,n*15,n*15);
 		content.strokeRect(0,0,n*15-1,n*15-1);
 		for(var i = 0;i<n;i++){
@@ -98,8 +101,8 @@ app.controller('mazeController',function(){
 		content.fillStyle = '#ff0000';
 		content.fillRect(5,5,5,5);
 		content.fillRect((n-1)*15+5,(n-1)*15+5,5,5);
-
-		for(var i = 1;i < this.path.length;i++){
+		if(solve){
+			for(var i = 1;i < this.path.length;i++){
 			content.beginPath();
 			content.strokeStyle = '#ff0000';
 			var point = this.path[i];
@@ -107,6 +110,7 @@ app.controller('mazeController',function(){
 			content.moveTo(pointb%n*15+7,Math.floor(pointb/n)*15+7);
 			content.lineTo(point%n*15+7,Math.floor(point/n)*15+7);
 			content.stroke();
+		}
 		}
 	};
 });
